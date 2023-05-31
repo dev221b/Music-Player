@@ -2,6 +2,7 @@ let now_playing = document.querySelector('.now-playing');
 let track_art = document.querySelector('.track-art');
 let track_name = document.querySelector('.track-name');
 let track_artist = document.querySelector('.track-artist');
+let coming_next = document.querySelector('.coming-next');
 
 let playpause_btn = document.querySelector('.playpause-track');
 let next_btn = document.querySelector('.next-track');
@@ -42,16 +43,17 @@ const music_list = [
     {
         img: 'images/innum.jpg',
         name: 'Innum Konjam Neram',
-        artist: 'Umm..not sure',
+        artist: 'Vijay Prakash, Swetha Mohan',
         music: 'music/innum.mp3'
     },
     {
-        img: 'images/innum.jpg',
-        name: 'Innum Konjam Neram',
-        artist: 'Umm..not sure',
-        music: 'music/innum.mp3'
+        img: 'images/naattu.jpeg',
+        name: 'Naattu Naattu',
+        artist: 'Rahul Sipligunj',
+        music: 'music/naattu.mp3'
     },
 ]
+
 loadTrack(track_index);
 
 function loadTrack(track_index){
@@ -65,6 +67,11 @@ function loadTrack(track_index){
     track_name.textContent = music_list[track_index].name;
     track_artist.textContent = music_list[track_index].artist;
     now_playing.textContent = "Playing music " + (track_index + 1) + " of " + music_list.length;
+    if(track_index<music_list.length-1){
+    coming_next.textContent = "Coming next : " + music_list[track_index + 1].name;}
+    else{
+        coming_next.textContent = "Coming next : " + music_list[0].name;
+    }
 
     updateTimer = setInterval(setUpdate, 1000);
 
@@ -121,8 +128,6 @@ function playTrack(){
     track_art.classList.add('rotate');
     wave.classList.add('loader');
     playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
-    // playpause_btn.classList.remove('fa fa-play-circle fa-5x');
-    // playpause_btn.classList.add('fa fa-pause-circle fa-5x');
 }
 function pauseTrack(){
     curr_track.pause();
@@ -130,8 +135,6 @@ function pauseTrack(){
     track_art.classList.remove('rotate');
     wave.classList.remove('loader');
     playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
-    // playpause_btn.classList.remove('fa fa-pause-circle fa-5x');
-    // playpause_btn.classList.add('fa fa-play-circle fa-5x');
 }
 function nextTrack(){
     if(track_index < music_list.length - 1 && isRandom === false){
