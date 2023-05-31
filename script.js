@@ -48,7 +48,7 @@ const music_list = [
     },
     {
         img: 'images/naattu.jpeg',
-        name: 'Naattu Naattu',
+        name: 'Naatu Naatu',
         artist: 'Rahul Sipligunj',
         music: 'music/naattu.mp3'
     },
