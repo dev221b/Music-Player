@@ -36,7 +36,7 @@ const music_list = [
     },
     {
         img: 'images/abhi.jpg',
-        name: 'Abhi Mujh Mein Kahi',
+        name: 'Abhi Mujh Mein Kahin',
         artist: 'Sonu Nigam',
         music: 'music/abhi.mp3'
     },
