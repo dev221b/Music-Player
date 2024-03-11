@@ -1,1 +1,1 @@
-# CodeClause_Music-Player
+Simple Music Player
